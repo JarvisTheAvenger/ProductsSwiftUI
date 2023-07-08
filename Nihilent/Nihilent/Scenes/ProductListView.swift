@@ -20,9 +20,10 @@ struct ProductListView: View {
                 } else {
                     List(viewModel.products, id: \.id) { productVM in
                         NavigationLink(destination: ProductDetailsView(viewModel: productVM)) {
-                            ProductListItemView(viewModel: productVM)
+                            ProductListItemView(viewModel: productVM, showCart: true)
                         }
                     }
+                    .listStyle(DefaultListStyle()) // Apply the default list style
                 }
             }
         }
@@ -35,6 +36,7 @@ struct ProductListView: View {
 
 struct ProductListItemView: View {
     @StateObject var viewModel: ProductViewModel
+    let showCart: Bool
 
     var body: some View {
         HStack {
@@ -52,40 +54,49 @@ struct ProductListItemView: View {
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 80, height: 80)
                 }
+            }
 
+            VStack(alignment: .leading) {
                 // Product name
                 Text(viewModel.title)
                     .font(.headline)
+                    .frame(maxWidth: .infinity, alignment: .leading)
 
                 // Product price
                 Text(viewModel.formattedPrice)
                     .font(.subheadline)
+                    .frame(maxWidth: .infinity, alignment: .leading)
             }
+            .padding(.leading, 8)
 
             Spacer()
 
-            // Add to cart button
-            if viewModel.isAddToCartEnabled {
-                Button(action: {
-                    // Handle add to cart action
-                }) {
-                    Image(systemName: "cart")
-                        .foregroundColor(.blue)
+            HStack(spacing: 16) {
+                // Add to cart button
+                if viewModel.isAddToCartEnabled && showCart {
+                    Button(action: {
+                        // Handle add to cart action
+                    }) {
+                        Image(systemName: "cart")
+                            .foregroundColor(.blue)
+                    }
                 }
-            }
 
-            // Favorite icon button
-            Button(action: {
-                viewModel.toggleFavorite()
-            }) {
-                Image(systemName: viewModel.isInWishlist ? "heart.fill" : "heart")
-                    .foregroundColor(viewModel.isInWishlist ? .red : .gray)
+                // Favorite icon button
+                Button(action: {
+                    viewModel.toggleFavorite()
+                }) {
+                    Image(systemName: viewModel.isInWishlist ? "heart.fill" : "heart")
+                        .foregroundColor(viewModel.isInWishlist ? .red : .gray)
+                }
+                .buttonStyle(PlainButtonStyle())
             }
-            .buttonStyle(PlainButtonStyle())
         }
-        .padding()
+        .padding(.vertical, 8) // Adjust vertical padding as needed
+        .padding(.horizontal, 16) // Adjust horizontal padding as needed
         .onAppear {
             viewModel.loadImage()
         }
     }
 }
+
