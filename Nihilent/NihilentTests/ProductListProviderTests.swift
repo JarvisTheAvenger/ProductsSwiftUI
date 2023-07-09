@@ -18,7 +18,7 @@ final class ProductListProviderTests: XCTestCase {
         super.tearDown()
     }
 
-    func testFetchProducts_Success() async throws {
+    func testFetchProductsSuccess() async throws {
         // Create a mock APIService
         let mockAPIService = MockAPIService()
 
@@ -35,7 +35,7 @@ final class ProductListProviderTests: XCTestCase {
         XCTAssertEqual(products.count, 3)
     }
 
-    func testFetchProducts_Failure() async throws {
+    func testFetchProductsFailure() async throws {
         // Create a mock APIService
         let mockAPIService = MockAPIService()
         mockAPIService.testError = NetworkError.invalidURL
