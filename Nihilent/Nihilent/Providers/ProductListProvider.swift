@@ -8,24 +8,23 @@
 import Foundation
 
 protocol ProductListProviderProtocol {
-    func fetchProductList() async throws -> [Product]
-}
-
-enum NetworkError: Error {
-    case invalidURL
-    case invalidData
+    var apiService: any APIServiceProtocol { get }
+    func fetchProducts() async throws -> [Product]
 }
 
 final class ProductListProvider: ProductListProviderProtocol {
-    private let urlString = "https://run.mocky.io/v3/2f06b453-8375-43cf-861a-06e95a951328"
+    let apiService: any APIServiceProtocol
 
-    func fetchProductList() async throws -> [Product] {
-        guard let url = URL(string: urlString) else {
-            throw NetworkError.invalidURL
+    init(apiService: any APIServiceProtocol) {
+        self.apiService = apiService
+    }
+
+    func fetchProducts() async throws -> [Product] {
+        do {
+            let response: ProductListResponse = try await apiService.fetchData(from: API.productList)
+            return response.products
+        } catch {
+            throw error
         }
-
-        let (data, _) = try await URLSession.shared.data(from: url)
-        let response = try JSONDecoder().decode(ProductListResponse.self, from: data)
-        return response.products
     }
 }

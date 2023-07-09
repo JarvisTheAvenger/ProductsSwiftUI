@@ -37,7 +37,7 @@ final class ProductListViewModel: ObservableObject, ProductListViewModelProtocol
 
         Task {
             do {
-                let productList = try await provider.fetchProductList()
+                let productList = try await provider.fetchProducts()
                 DispatchQueue.main.async {
                     self.products = productList.map { ProductViewModel(product: $0, productListViewModel: self) }
                     self.isLoading = false

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B75D58F32A5A74BE005E33F4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75D58F22A5A74BE005E33F4 /* Constants.swift */; };
+		B75D58F72A5A7838005E33F4 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75D58F62A5A7838005E33F4 /* APIService.swift */; };
+		B75D58F92A5A800E005E33F4 /* MockAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75D58F82A5A800E005E33F4 /* MockAPIService.swift */; };
+		B75D58FB2A5A81E5005E33F4 /* ProductListProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75D58FA2A5A81E5005E33F4 /* ProductListProviderTests.swift */; };
 		B79B7B2D2A5851EE003AC431 /* NihilentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79B7B2C2A5851EE003AC431 /* NihilentApp.swift */; };
 		B79B7B2F2A5851EE003AC431 /* TabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79B7B2E2A5851EE003AC431 /* TabbarView.swift */; };
 		B79B7B312A5851EF003AC431 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B79B7B302A5851EF003AC431 /* Assets.xcassets */; };
@@ -36,6 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B75D58F22A5A74BE005E33F4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B75D58F62A5A7838005E33F4 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		B75D58F82A5A800E005E33F4 /* MockAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPIService.swift; sourceTree = "<group>"; };
+		B75D58FA2A5A81E5005E33F4 /* ProductListProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListProviderTests.swift; sourceTree = "<group>"; };
 		B79B7B292A5851EE003AC431 /* Nihilent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nihilent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B79B7B2C2A5851EE003AC431 /* NihilentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NihilentApp.swift; sourceTree = "<group>"; };
 		B79B7B2E2A5851EE003AC431 /* TabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarView.swift; sourceTree = "<group>"; };
@@ -74,6 +82,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B75D58F42A5A74C3005E33F4 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				B75D58F22A5A74BE005E33F4 /* Constants.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		B75D58F52A5A780B005E33F4 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				B75D58F62A5A7838005E33F4 /* APIService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		B79B7B202A5851EE003AC431 = {
 			isa = PBXGroup;
 			children = (
@@ -96,10 +120,12 @@
 			isa = PBXGroup;
 			children = (
 				B79B7B2C2A5851EE003AC431 /* NihilentApp.swift */,
-				B79B7B4E2A5859AC003AC431 /* Providers */,
 				B79B7B482A58545D003AC431 /* Models */,
 				B79B7B522A593F85003AC431 /* ViewModels */,
 				B79B7B4D2A5854E8003AC431 /* Scenes */,
+				B75D58F52A5A780B005E33F4 /* Service */,
+				B79B7B4E2A5859AC003AC431 /* Providers */,
+				B75D58F42A5A74C3005E33F4 /* Constant */,
 				B79B7B302A5851EF003AC431 /* Assets.xcassets */,
 				B79B7B322A5851EF003AC431 /* Preview Content */,
 			);
@@ -157,6 +183,7 @@
 				B7BC64722A5987E900E6209A /* Mocks */,
 				B7BC64692A59858F00E6209A /* ProductViewModelTests.swift */,
 				B7BC64702A59874D00E6209A /* ProductListViewModelTests.swift */,
+				B75D58FA2A5A81E5005E33F4 /* ProductListProviderTests.swift */,
 			);
 			path = NihilentTests;
 			sourceTree = "<group>";
@@ -165,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				B7BC64732A5987FF00E6209A /* MockProductListProvider.swift */,
+				B75D58F82A5A800E005E33F4 /* MockAPIService.swift */,
 				B7BC64782A59984A00E6209A /* MockProductListViewModel.swift */,
 			);
 			path = Mocks;
@@ -282,7 +310,9 @@
 				B79B7B2F2A5851EE003AC431 /* TabbarView.swift in Sources */,
 				B79B7B502A5859C0003AC431 /* ProductListProvider.swift in Sources */,
 				B79B7B472A58532E003AC431 /* Product.swift in Sources */,
+				B75D58F72A5A7838005E33F4 /* APIService.swift in Sources */,
 				B79B7B3D2A58526C003AC431 /* ProductListViewModel.swift in Sources */,
+				B75D58F32A5A74BE005E33F4 /* Constants.swift in Sources */,
 				B79B7B542A594D21003AC431 /* ProductViewModel.swift in Sources */,
 				B79B7B2D2A5851EE003AC431 /* NihilentApp.swift in Sources */,
 				B79B7B432A5852B6003AC431 /* FavoritesView.swift in Sources */,
@@ -294,6 +324,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B75D58F92A5A800E005E33F4 /* MockAPIService.swift in Sources */,
+				B75D58FB2A5A81E5005E33F4 /* ProductListProviderTests.swift in Sources */,
 				B7BC64712A59874D00E6209A /* ProductListViewModelTests.swift in Sources */,
 				B7BC646A2A59858F00E6209A /* ProductViewModelTests.swift in Sources */,
 				B7BC64792A59984A00E6209A /* MockProductListViewModel.swift in Sources */,

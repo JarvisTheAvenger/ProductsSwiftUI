@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TabbarView: View {
-    @StateObject private var productListViewModel = ProductListViewModel(provider: ProductListProvider())
+    @StateObject private var productListViewModel = ProductListViewModel(provider: ProductListProvider(apiService: APIService()))
 
     var body: some View {
         TabView {

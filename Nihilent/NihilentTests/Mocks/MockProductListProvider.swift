@@ -15,9 +15,10 @@ enum TestCaseScenario {
 }
 
 final class MockProductListProvider: ProductListProviderProtocol {
+    var apiService: APIServiceProtocol = MockAPIService()
     var testCaseScenario: TestCaseScenario = .success
 
-    func fetchProductList() async throws -> [Product] {
+    func fetchProducts() async throws -> [Product] {
         switch testCaseScenario {
         case .success:
             return Product.mockData()

@@ -8,7 +8,7 @@
 @testable import Nihilent
 import UIKit
 
-class ProductListViewModelMock: ProductListViewModelProtocol {
+final class ProductListViewModelMock: ProductListViewModelProtocol {
     var products: [ProductViewModel] = []
     var favorites: Set<String> = []
     var isLoading: Bool = false

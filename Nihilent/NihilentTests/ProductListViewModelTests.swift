@@ -8,7 +8,7 @@
 @testable import Nihilent
 import XCTest
 
-class ProductListViewModelTests: XCTestCase {
+final class ProductListViewModelTests: XCTestCase {
     var viewModel: ProductListViewModel!
     var mockProvider: MockProductListProvider!
 
