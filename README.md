@@ -5,5 +5,4 @@ https://github.com/JarvisTheAvenger/ProductsSwiftUI/assets/25341882/a3db98ee-bc1
 
 # Test Cases: 
 
-<img width="432" alt="Screenshot 2023-07-08 at 6 56 11 PM" src="https://github.com/JarvisTheAvenger/ProductsSwiftUI/assets/25341882/4f1e21a5-ae06-4bac-aeef-d5abb08d2dd2">
-
+<img width="376" alt="Screenshot 2023-07-09 at 11 33 06 AM" src="https://github.com/JarvisTheAvenger/ProductsSwiftUI/assets/25341882/23adf0e4-f439-4c2f-96a4-53519beed875">
