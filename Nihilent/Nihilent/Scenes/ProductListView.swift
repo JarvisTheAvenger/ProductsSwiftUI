@@ -23,7 +23,7 @@ struct ProductListView: View {
                             ProductListItemView(viewModel: productVM, showCart: true)
                         }
                     }
-                    .listStyle(DefaultListStyle()) // Apply the default list style
+                    .listStyle(DefaultListStyle())
                 }
             }
         }
@@ -92,8 +92,8 @@ struct ProductListItemView: View {
                 .buttonStyle(PlainButtonStyle())
             }
         }
-        .padding(.vertical, 8) // Adjust vertical padding as needed
-        .padding(.horizontal, 16) // Adjust horizontal padding as needed
+        .padding(.vertical, 8)
+        .padding(.horizontal, 16)
         .onAppear {
             viewModel.loadImage()
         }
