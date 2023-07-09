@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct FavoritesView: View {
-    @ObservedObject var viewModel: ProductListViewModel
+struct FavoritesView<ViewModel>: View where ViewModel: ProductListViewModelProtocol {
+    @ObservedObject var viewModel: ViewModel
 
     var body: some View {
         VStack {

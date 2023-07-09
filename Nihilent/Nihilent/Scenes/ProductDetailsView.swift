@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct ProductDetailsView: View {
-    @ObservedObject var viewModel: ProductViewModel
+struct ProductDetailsView<ViewModel>: View where ViewModel: ProductViewModelProtocol {
+    @ObservedObject var viewModel: ViewModel
 
     var body: some View {
         VStack {
@@ -57,7 +57,9 @@ struct ProductDetailsView: View {
         }
         .navigationBarTitle("Product Details")
         .onAppear {
-            viewModel.loadImage()
+            Task {
+                await viewModel.loadImage()
+            }
         }
     }
 }

@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct ProductListView: View {
-    @ObservedObject var viewModel: ProductListViewModel
+struct ProductListView<ViewModel>: View where ViewModel: ProductListViewModelProtocol {
+    @ObservedObject var viewModel: ViewModel
 
     var body: some View {
         VStack {
@@ -34,8 +34,8 @@ struct ProductListView: View {
     }
 }
 
-struct ProductListItemView: View {
-    @StateObject var viewModel: ProductViewModel
+struct ProductListItemView<ViewModel>: View where ViewModel: ProductViewModelProtocol {
+    @StateObject var viewModel: ViewModel
     let showCart: Bool
 
     var body: some View {
@@ -95,7 +95,9 @@ struct ProductListItemView: View {
         .padding(.vertical, 8)
         .padding(.horizontal, 16)
         .onAppear {
-            viewModel.loadImage()
+            Task {
+                await viewModel.loadImage()
+            }
         }
     }
 }
